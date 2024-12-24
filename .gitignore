@@ -75,7 +75,7 @@ docs/_build/
 .pybuilder/
 target/
 
-apikeys.yml
+
 
 # Jupyter Notebook
 .ipynb_checkpoints
@@ -83,6 +83,7 @@ apikeys.yml
 # IPython
 profile_default/
 ipython_config.py
+apikeys.yml
 
 # pyenv
 #   For a library or package, you might want to ignore these files since the code is
