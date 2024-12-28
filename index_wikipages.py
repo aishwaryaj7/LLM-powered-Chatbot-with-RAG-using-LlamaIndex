@@ -27,3 +27,25 @@ def wikipage_list(query):
     )
     wikipage_requests = program(query=query)
     return wikipage_requests
+
+def create_wikidocs(wikipage_requests):
+    # Initialize WikipediaReader
+    reader = WikipediaReader()
+
+    # Load data from Wikipedia
+    documents = reader.load_data(pages=wikipage_requests)
+    return documents
+
+def create_index(query):
+    global index
+    wikipage_requests = wikipage_list(query)
+    documents = create_wikidocs(wikipage_requests)
+    text_splits = SentenceSplitter(chunk_size=150,chunk_overlap=45)
+    nodes = text_splits.get_nodes_from_documents(documents)
+    index = VectorStoreIndex(nodes)
+    return index
+
+# if __name__ == "__main__":
+#     query = "/get wikipages: paris, lagos, lao"
+#     index = create_index(query)
+#     print("INDEX CREATED", index)

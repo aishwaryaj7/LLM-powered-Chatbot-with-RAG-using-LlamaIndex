@@ -9,8 +9,9 @@ def get_apikey():
     """
 
     # Construct the full path to the configuration file
-    script_dir = "/LLM_chat_assistant/"
-    file_path = os.path.join(script_dir, "apikeys.yml")
+    # script_dir = "/LLM_chat_assistant/"
+    # file_path = os.path.join(script_dir, "apikeys.yml")
+    file_path = "/Users/ajsharma/PycharmProjects/LLM_chat_assistant/apikeys.yml"
 
     with open(file_path, 'r') as yamlfile:
         loaded_yamlfile = yaml.safe_load(yamlfile)
